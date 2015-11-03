@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>kohya.net</title>
+  <title>xenomai-3.0 on ubilinux with Intel Edison | kohya.net</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kohya.net">
-<meta property="og:url" content="http://takarakasai.github.io/index.html">
+  <meta name="description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.
+2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xenomai-3.0 on ubilinux with Intel Edison">
+<meta property="og:url" content="http://takarakasai.github.io/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/index.html">
 <meta property="og:site_name" content="kohya.net">
-<meta property="og:description">
+<meta property="og:description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.
+2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
+<meta property="og:updated_time" content="2015-11-03T09:53:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kohya.net">
-<meta name="twitter:description">
+<meta name="twitter:title" content="xenomai-3.0 on ubilinux with Intel Edison">
+<meta name="twitter:description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.
+2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
   
     <link rel="alternative" href="/atom.xml" title="kohya.net" type="application/atom+xml">
   
@@ -59,9 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-xenomai-3-0-on-ubilinux-with-Intel-Edison" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-xenomai-3-0-on-ubilinux-with-Intel-Edison" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/" class="article-date">
   <time datetime="2015-10-31T20:43:20.000Z" itemprop="datePublished">2015-11-01</time>
@@ -74,8 +76,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/">xenomai-3.0 on ubilinux with Intel Edison</a>
+    <h1 class="article-title" itemprop="name">
+      xenomai-3.0 on ubilinux with Intel Edison
     </h1>
   
 
@@ -121,48 +123,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-wlan-at-ubilinux-with-edison" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/13/wlan-at-ubilinux-with-edison/" class="article-date">
-  <time datetime="2015-10-12T16:56:07.000Z" itemprop="datePublished">2015-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/13/wlan-at-ubilinux-with-edison/">wlan at ubilinux with edison</a>
-    </h1>
+    <a href="/2015/10/13/wlan-at-ubilinux-with-edison/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wlan at ubilinux with edison</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ubilinux_な_edison_で_wlan">ubilinux な edison で wlan</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&gt; wpa_passphrase koya $&#123;your_wpa_passwd&#125; &gt; koya-wlan.conf</span><br><span class="line">&gt; cp ./koya-wlan.conf /etc/wpa_supplicant/</span><br><span class="line">&gt; vi /etc/network/interfaces</span><br><span class="line"><span class="keyword">auto</span> wlan0</span><br><span class="line">iface wlan0 inet dhcp</span><br><span class="line">    <span class="preprocessor"># For WPA</span></span><br><span class="line">+   wpa-conf /etc/wpa_supplicant/koya-wlan.conf</span><br><span class="line">-   wpa-ssid test</span><br><span class="line">-   wpa-psk pass</span><br><span class="line">+   <span class="preprocessor">#wpa-ssid test</span></span><br><span class="line">+   <span class="preprocessor">#wpa-psk pass</span></span><br><span class="line">    <span class="preprocessor"># For WEP</span></span><br><span class="line">    <span class="preprocessor">#wireless-essid Emutex</span></span><br><span class="line">    <span class="preprocessor">#wireless-mode Managed</span></span><br><span class="line">    <span class="preprocessor">#wireless-key s:passwordk</span></span><br><span class="line"></span><br><span class="line">&gt; ifdown wlan0</span><br><span class="line">nternet Systems Consortium DHCP Client <span class="number">4.2</span><span class="number">.2</span></span><br><span class="line">Copyright <span class="number">2004</span>-<span class="number">2011</span> Internet Systems Consortium.</span><br><span class="line">All rights reserved.</span><br><span class="line">For info, please visit https:<span class="comment">//www.isc.org/software/dhcp/</span></span><br><span class="line"></span><br><span class="line">Listening on LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   Socket/fallback</span><br><span class="line">DHCPRELEASE on wlan0 to <span class="number">192.168</span><span class="number">.11</span><span class="number">.1</span> port <span class="number">67</span></span><br><span class="line"></span><br><span class="line">&gt; ifup wlan0</span><br><span class="line">Internet Systems Consortium DHCP Client <span class="number">4.2</span><span class="number">.2</span></span><br><span class="line">Copyright <span class="number">2004</span>-<span class="number">2011</span> Internet Systems Consortium.</span><br><span class="line">All rights reserved.</span><br><span class="line">For info, please visit https:<span class="comment">//www.isc.org/software/dhcp/</span></span><br><span class="line"></span><br><span class="line">Listening on LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   Socket/fallback</span><br><span class="line">DHCPDISCOVER on wlan0 to <span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span> port <span class="number">67</span> interval <span class="number">8</span></span><br><span class="line">DHCPDISCOVER on wlan0 to <span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span> port <span class="number">67</span> interval <span class="number">13</span></span><br><span class="line">DHCPREQUEST on wlan0 to <span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span> port <span class="number">67</span></span><br><span class="line">DHCPOFFER from <span class="number">192.168</span><span class="number">.11</span><span class="number">.1</span></span><br><span class="line">DHCPACK from <span class="number">192.168</span><span class="number">.11</span><span class="number">.1</span></span><br><span class="line">bound to <span class="number">192.168</span><span class="number">.11</span><span class="number">.11</span> -- renewal in <span class="number">76747</span> seconds.</span><br><span class="line"></span><br><span class="line">&gt; iwconfig wlan0</span><br><span class="line">wlan0     IEEE <span class="number">802.11</span>abgn  ESSID:<span class="string">"koya"</span></span><br><span class="line">          Mode:Managed  Frequency:<span class="number">2.412</span> GHz  Access Point: <span class="number">4</span>C:E6:<span class="number">76</span>:<span class="number">3</span>E:BE:A1</span><br><span class="line">          Bit Rate=<span class="number">54</span> Mb/s   Tx-Power=<span class="number">31</span> dBm</span><br><span class="line">          Retry  <span class="keyword">long</span> limit:<span class="number">7</span>   RTS thr:off   Fragment thr:off</span><br><span class="line">          Encryption key:off</span><br><span class="line">          Power Management:on</span><br><span class="line">          Link Quality=<span class="number">56</span>/<span class="number">70</span>  Signal level=-<span class="number">54</span> dBm</span><br><span class="line">          Rx invalid nwid:<span class="number">0</span>  Rx invalid crypt:<span class="number">0</span>  Rx invalid frag:<span class="number">0</span></span><br><span class="line">          Tx excessive retries:<span class="number">14</span>  Invalid misc:<span class="number">1</span>   Missed beacon:<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://takarakasai.github.io/2015/10/13/wlan-at-ubilinux-with-edison/" data-id="cigj77hgh0000g5er4mzwjwpd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">
