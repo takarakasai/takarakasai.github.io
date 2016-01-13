@@ -3,17 +3,81 @@
 <head>
   <meta charset="utf-8">
   
-  <title>kohya.net</title>
+  <title>rs485-with-Intel-Edison | kohya.net</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kohya.net">
-<meta property="og:url" content="http://takarakasai.github.io/index.html">
+  <meta name="description" content="Intel EdisonでGR001とRS485で通信
+
+
+1.今回の目標
+Intel EdisonでGR001とRS485で通信する.
+
+複数の構成が考えられるので代表的なものを試す.
+
+できれば通信時間等の比較をしてみる.
+
+
+
+2.実施する構成
+USB-RS232C変換ケーブル + RS232C-RS485変換コネクタを使用する
+
+USB-RS485変換コネクタを使用する
+
+RS232C-R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rs485-with-Intel-Edison">
+<meta property="og:url" content="http://takarakasai.github.io/2015/11/30/rs485-with-Intel-Edison/index.html">
 <meta property="og:site_name" content="kohya.net">
-<meta property="og:description">
+<meta property="og:description" content="Intel EdisonでGR001とRS485で通信
+
+
+1.今回の目標
+Intel EdisonでGR001とRS485で通信する.
+
+複数の構成が考えられるので代表的なものを試す.
+
+できれば通信時間等の比較をしてみる.
+
+
+
+2.実施する構成
+USB-RS232C変換ケーブル + RS232C-RS485変換コネクタを使用する
+
+USB-RS485変換コネクタを使用する
+
+RS232C-R">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/gr001_rear.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/ttyUSB2rs232c2rs485.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/ttyUSB2rs485.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/ttyMFD2rs485_frisk.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/ttyMFD2rs485.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/ttyMFD2rs485_1board_1.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/ttyMFD2rs485_1board_2.jpg">
+<meta property="og:image" content="http://www.incom.co.jp/var/assets/storage/images/companies/node_1664/product/node_118235/1662980-2-jpn-JP/RS-485-ISL3260x_square250.jpg">
+<meta property="og:image" content="http://www.eleki-jack.com/KitsandKids2/assets_c/2010/11/LTSP20620020-thumb-400x493.jpg">
+<meta property="og:image" content="http://akizukidenshi.com/img/goods/L/P-06863.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/makerbot_replicator2x.jpg">
+<meta property="og:image" content="http://kohya.net/slides/slides/rs485-with-Intel-Edison/gr001_front.jpg">
+<meta property="og:updated_time" content="2016-01-13T21:02:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kohya.net">
-<meta name="twitter:description">
+<meta name="twitter:title" content="rs485-with-Intel-Edison">
+<meta name="twitter:description" content="Intel EdisonでGR001とRS485で通信
+
+
+1.今回の目標
+Intel EdisonでGR001とRS485で通信する.
+
+複数の構成が考えられるので代表的なものを試す.
+
+できれば通信時間等の比較をしてみる.
+
+
+
+2.実施する構成
+USB-RS232C変換ケーブル + RS232C-RS485変換コネクタを使用する
+
+USB-RS485変換コネクタを使用する
+
+RS232C-R">
   
     <link rel="alternative" href="/atom.xml" title="kohya.net" type="application/atom+xml">
   
@@ -59,9 +123,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-rs485-with-Intel-Edison" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-rs485-with-Intel-Edison" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/30/rs485-with-Intel-Edison/" class="article-date">
   <time datetime="2015-11-30T13:00:20.000Z" itemprop="datePublished">2015-11-30</time>
@@ -74,8 +136,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/30/rs485-with-Intel-Edison/">rs485-with-Intel-Edison</a>
+    <h1 class="article-title" itemprop="name">
+      rs485-with-Intel-Edison
     </h1>
   
 
@@ -226,123 +288,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-xenomai-3-0-on-ubilinux-with-Intel-Edison" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/" class="article-date">
-  <time datetime="2015-10-31T20:43:20.000Z" itemprop="datePublished">2015-11-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/">xenomai-3.0 on ubilinux with Intel Edison</a>
-    </h1>
+    <a href="/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">xenomai-3.0 on ubilinux with Intel Edison</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-今回の目標">1.今回の目標</h1><p>Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.</p>
-<hr>
-<h1 id="2-方針">2.方針</h1><p>Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.<br>Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.<br>なので,Yocto linux向けのXenomaiパッチを作成してYoctoのビルドコンフィグに設定してビルドするです.</p>
-<hr>
-<h1 id="3-準備">3.準備</h1><p>まずEdisonにUbilinuxの環境を作成します.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; wget http://www.emutexlabs.com/files/ubilinux/ubilinux-edison-<span class="number">150309</span>.tar.gz</span><br><span class="line">&gt; tar zxvf ubilinux-edison-<span class="number">150309</span>.tar.gz$</span><br><span class="line">&gt; <span class="built_in">cd</span> toFlash</span><br><span class="line"> ここで一旦Edisonに接続されているUSBケーブルを取り外します</span><br><span class="line">&gt; ./flashall.sh</span><br><span class="line"> EdisonにUSBケーブルを接続します.</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="4-作業手順">4.作業手順</h1><hr>
-<h2 id="4-1_作業ディレクトリ作成">4.1 作業ディレクトリ作成</h2><p>適当に作業用ディレクトリを作成します.<br>以降はこの下で作業を行います.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir work</span><br><span class="line">&gt; <span class="built_in">cd</span> work</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="4-2_ソースコードの準備">4.2 ソースコードの準備</h2><p>Yocto LinuxとXenomaiのソース一式を取得して展開</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; wget http://downloadmirror.intel.com/<span class="number">25028</span>/eng/edison-src-ww25.<span class="number">5</span>-<span class="number">15</span>.tgz</span><br><span class="line">&gt; tar zxvf edison-src-ww25.<span class="number">5</span>-<span class="number">15</span>.tgz$</span><br><span class="line">&gt; wget https://xenomai.org/downloads/xenomai/stable/xenomai-<span class="number">3.0</span>.tar.bz2</span><br><span class="line">&gt; bzip2 -dc xenomai-<span class="number">3.0</span>.tar.bz2$ | tar xvf -</span><br></pre></td></tr></table></figure>
-<p>Git から取得しても良いです.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; git <span class="built_in">clone</span> git://git.yoctoproject.org/meta-intel-edison</span><br><span class="line">&gt; <span class="built_in">cd</span> meta-intel-edison</span><br><span class="line">&gt; git checkout ww05-<span class="number">15</span></span><br><span class="line">&gt; <span class="built_in">cd</span> ..</span><br><span class="line">&gt; mkdir edison-src</span><br><span class="line">&gt; mv meta-intel-edison edison-src/</span><br><span class="line"></span><br><span class="line">&gt; git <span class="built_in">clone</span> git://git.xenomai.org/xenomai-<span class="number">3</span>.git</span><br><span class="line">&gt; <span class="built_in">cd</span> xenomai-<span class="number">3</span></span><br><span class="line">&gt; git checkout v3.<span class="number">0</span></span><br><span class="line">&gt; <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="4-3_一旦ビルドする">4.3 一旦ビルドする</h2><p>Yoctoのビルドシステムではビルドコマンドしないとソースコードを落としてくれないのでビルドします.<br><em>と書いたもののバージョンが一致するカーネルをkernel.orgから持ってきても良さそうです.
-</em>ビルドすると34GBほど消費されます.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> edison-src</span><br><span class="line">&gt; ln <span class="operator">-s</span> meta-intel-edison/utils/Makefile.mk Makefile</span><br><span class="line">&gt; make setup</span><br><span class="line">&gt; <span class="built_in">cd</span> edison-src/out/linux64</span><br><span class="line">&gt; <span class="built_in">source</span> poky/oe-init-build-env</span><br><span class="line">&gt; bitbake edison-image</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="4-4_パッチ作成">4.4 パッチ作成</h2><p>ビルド終わると以下のディレクトリにカーネルソースが取得されています.<br>out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/linux/<br>ので、xenomaiパッチをあてます.<br>*edison用のディストリは皆32bitなので注意.</p>
-<p>diff -Narup linux linux_xeno</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cp -rf edison-src/out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/<span class="number">3.10</span>.<span class="number">17</span>-r0/linux/ ./linux.org</span><br><span class="line">&gt; cp -rf edison-src/out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/<span class="number">3.10</span>.<span class="number">17</span>-r0/linux/ ./linux.xeno</span><br><span class="line">&gt; xenomai-<span class="number">3</span>/scripts/prepare-kernel.sh \</span><br><span class="line">--linux=linux.xeno \</span><br><span class="line">--ipipe=xenomai-<span class="number">3</span>/kernel/cobalt/arch/x86/patches/ipipe-core-<span class="number">3.10</span>.<span class="number">32</span>-x86-<span class="number">6</span>.patch \</span><br><span class="line">--arch=x86</span><br></pre></td></tr></table></figure>
-<p>これだとエラーが出るのでなくなるまで修正します.<br>修正が終わったらパッチを作成します.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; diff -Narup linux.org linux_xeno &gt; xenomai-<span class="number">3.0</span>-<span class="number">3.10</span>.<span class="number">17</span>.patch</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="4-5_パッチの組み込み">4.5 パッチの組み込み</h2><p>作成したパッチをYoctoのビルドに組み込みます.<br>これには特定の場所にパッチを配置して、bitbakeの設定ファイルに記述を追加する必要があります.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; mv xenomai-<span class="number">3.0</span>-<span class="number">3.10</span>.<span class="number">17</span>.patch edison-src/meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/</span><br><span class="line">&gt; vi edison-src/meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/linux-yocto_3.<span class="number">10</span>.bbappend</span><br><span class="line">... 略 ...</span><br><span class="line">SRC_URI += <span class="string">"file://defconfig"</span></span><br><span class="line">SRC_URI += <span class="string">"file://upstream_to_edison.patch"</span>                 &lt;&lt;&lt;&lt; edison向けのパッチ</span><br><span class="line">SRC_URI += <span class="string">"file://xenomai-3.0-3.10.17.patch"</span>                &lt;&lt;&lt;&lt; 追加.xenomaiパッチ</span><br><span class="line">... 略 ...</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="4-6_カーネルコンフィグ">4.6 カーネルコンフィグ</h2><p>Yoctoのビルドシステムを使ってカーネルのコンフィグをいじります.<br>Xenomaiを使い物にするには,CPUをぶん回したりするので以下を参考に設定します。<br><a href="https://xenomai.org//2014/06/configuring-for-x86-based-dual-kernels/" target="_blank" rel="external">https://xenomai.org//2014/06/configuring-for-x86-based-dual-kernels/</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; bitbake virtual/kernel -c menuconfig</span><br></pre></td></tr></table></figure>
-<p>設定が終わったらYoctoのビルドシステムが指定する所定の場所に配置します.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp edison-src/build/tmp/work/edison-poky-linux/linux-yocto/<span class="number">3.10</span>.<span class="number">17</span>-r0/linux-edison-standard-build/.config ../../../meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="4-7_ビルド">4.7 ビルド</h2><p>Xenomaiパッチを当てたカーネルをビルドします.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; bitbake edison-image</span><br><span class="line">&gt; ls edison-src/out/linux64/build/tmp/deploy/images/edison</span><br><span class="line">...</span><br><span class="line">bzImage--<span class="number">3.10</span>.<span class="number">17</span>-r0-edison-YYYYMMDDHHMMSS.bin</span><br><span class="line">edison-image-edison-YYYYMMDDHHMMSS.hddimg</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="4-8_インストール">4.8 インストール</h2><p>vmlinuz と必要あれば/lib/modulesなどをコピーします.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir ext4</span><br><span class="line">&gt; sudo mount -o loop edison-image-edison-YYYYMMDDHHMMSS.rootfs.ext4 ext4</span><br><span class="line">&gt; ls ext4</span><br><span class="line">bin  boot  dev  etc  home  lib  lost+found  media  mnt  opt  proc  run  sbin  sketch  sys  tmp  usr  var</span><br><span class="line">&gt; scp -rf ext4/lib/modules/<span class="number">3.10</span>.<span class="number">17</span>-yocto-standard root@<span class="variable">$&#123;edison_ip&#125;</span>:/lib/modules/</span><br><span class="line"></span><br><span class="line">&gt; mkdir hddimg</span><br><span class="line">&gt; sudo mount -o loop edison-image-edison-YYYYMMDDHHMMSS.hddimg hddimg</span><br><span class="line">ldlinux.c32  ldlinux.sys  syslinux.cfg  vmlinuz</span><br><span class="line">&gt; scp -rf hddimg/vmlinuz root@<span class="variable">$&#123;edison_ip&#125;</span>:/boot/vmlinuz.xeno</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://takarakasai.github.io/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/" data-id="cijdasbx90000oyerxwtn4pjf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-wlan-at-ubilinux-with-edison" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/13/wlan-at-ubilinux-with-edison/" class="article-date">
-  <time datetime="2015-10-12T16:56:07.000Z" itemprop="datePublished">2015-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/13/wlan-at-ubilinux-with-edison/">wlan at ubilinux with edison</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ubilinux_な_edison_で_wlan">ubilinux な edison で wlan</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&gt; wpa_passphrase koya $&#123;your_wpa_passwd&#125; &gt; koya-wlan.conf</span><br><span class="line">&gt; cp ./koya-wlan.conf /etc/wpa_supplicant/</span><br><span class="line">&gt; vi /etc/network/interfaces</span><br><span class="line"><span class="keyword">auto</span> wlan0</span><br><span class="line">iface wlan0 inet dhcp</span><br><span class="line">    <span class="preprocessor"># For WPA</span></span><br><span class="line">+   wpa-conf /etc/wpa_supplicant/koya-wlan.conf</span><br><span class="line">-   wpa-ssid test</span><br><span class="line">-   wpa-psk pass</span><br><span class="line">+   <span class="preprocessor">#wpa-ssid test</span></span><br><span class="line">+   <span class="preprocessor">#wpa-psk pass</span></span><br><span class="line">    <span class="preprocessor"># For WEP</span></span><br><span class="line">    <span class="preprocessor">#wireless-essid Emutex</span></span><br><span class="line">    <span class="preprocessor">#wireless-mode Managed</span></span><br><span class="line">    <span class="preprocessor">#wireless-key s:passwordk</span></span><br><span class="line"></span><br><span class="line">&gt; ifdown wlan0</span><br><span class="line">nternet Systems Consortium DHCP Client <span class="number">4.2</span><span class="number">.2</span></span><br><span class="line">Copyright <span class="number">2004</span>-<span class="number">2011</span> Internet Systems Consortium.</span><br><span class="line">All rights reserved.</span><br><span class="line">For info, please visit https:<span class="comment">//www.isc.org/software/dhcp/</span></span><br><span class="line"></span><br><span class="line">Listening on LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   Socket/fallback</span><br><span class="line">DHCPRELEASE on wlan0 to <span class="number">192.168</span><span class="number">.11</span><span class="number">.1</span> port <span class="number">67</span></span><br><span class="line"></span><br><span class="line">&gt; ifup wlan0</span><br><span class="line">Internet Systems Consortium DHCP Client <span class="number">4.2</span><span class="number">.2</span></span><br><span class="line">Copyright <span class="number">2004</span>-<span class="number">2011</span> Internet Systems Consortium.</span><br><span class="line">All rights reserved.</span><br><span class="line">For info, please visit https:<span class="comment">//www.isc.org/software/dhcp/</span></span><br><span class="line"></span><br><span class="line">Listening on LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   LPF/wlan0/<span class="number">78</span>:<span class="number">4</span>b:<span class="number">87</span>:a8:f0:e9</span><br><span class="line">Sending on   Socket/fallback</span><br><span class="line">DHCPDISCOVER on wlan0 to <span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span> port <span class="number">67</span> interval <span class="number">8</span></span><br><span class="line">DHCPDISCOVER on wlan0 to <span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span> port <span class="number">67</span> interval <span class="number">13</span></span><br><span class="line">DHCPREQUEST on wlan0 to <span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span> port <span class="number">67</span></span><br><span class="line">DHCPOFFER from <span class="number">192.168</span><span class="number">.11</span><span class="number">.1</span></span><br><span class="line">DHCPACK from <span class="number">192.168</span><span class="number">.11</span><span class="number">.1</span></span><br><span class="line">bound to <span class="number">192.168</span><span class="number">.11</span><span class="number">.11</span> -- renewal in <span class="number">76747</span> seconds.</span><br><span class="line"></span><br><span class="line">&gt; iwconfig wlan0</span><br><span class="line">wlan0     IEEE <span class="number">802.11</span>abgn  ESSID:<span class="string">"koya"</span></span><br><span class="line">          Mode:Managed  Frequency:<span class="number">2.412</span> GHz  Access Point: <span class="number">4</span>C:E6:<span class="number">76</span>:<span class="number">3</span>E:BE:A1</span><br><span class="line">          Bit Rate=<span class="number">54</span> Mb/s   Tx-Power=<span class="number">31</span> dBm</span><br><span class="line">          Retry  <span class="keyword">long</span> limit:<span class="number">7</span>   RTS thr:off   Fragment thr:off</span><br><span class="line">          Encryption key:off</span><br><span class="line">          Power Management:on</span><br><span class="line">          Link Quality=<span class="number">56</span>/<span class="number">70</span>  Signal level=-<span class="number">54</span> dBm</span><br><span class="line">          Rx invalid nwid:<span class="number">0</span>  Rx invalid crypt:<span class="number">0</span>  Rx invalid frag:<span class="number">0</span></span><br><span class="line">          Tx excessive retries:<span class="number">14</span>  Invalid misc:<span class="number">1</span>   Missed beacon:<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://takarakasai.github.io/2015/10/13/wlan-at-ubilinux-with-edison/" data-id="cijdasbxm0001oyerfn6jzqm6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
