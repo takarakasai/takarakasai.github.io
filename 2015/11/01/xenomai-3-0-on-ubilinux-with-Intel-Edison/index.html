@@ -5,22 +5,17 @@
   
   <title>xenomai-3.0 on ubilinux with Intel Edison | kohya.net</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.
-
-2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
+  <meta name="description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.  2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xenomai-3.0 on ubilinux with Intel Edison">
 <meta property="og:url" content="http://takarakasai.github.io/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/index.html">
 <meta property="og:site_name" content="kohya.net">
-<meta property="og:description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.
-
-2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
-<meta property="og:updated_time" content="2015-11-03T11:10:31.000Z">
+<meta property="og:description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.  2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-01T02:16:38.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xenomai-3.0 on ubilinux with Intel Edison">
-<meta name="twitter:description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.
-
-2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
+<meta name="twitter:description" content="1.今回の目標Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.  2.方針Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.なので,Yocto">
   
     <link rel="alternative" href="/atom.xml" title="kohya.net" type="application/atom+xml">
   
@@ -28,7 +23,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -60,7 +55,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://takarakasai.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://takarakasai.github.io"></form>
       </div>
     </div>
   </div>
@@ -88,50 +83,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-今回の目標">1.今回の目標</h1><p>Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.</p>
+        <h1 id="1-今回の目標"><a href="#1-今回の目標" class="headerlink" title="1.今回の目標"></a>1.今回の目標</h1><p>Intel Edison向けUbilinuxのカーネルをxenomaiカーネルに置き換える.</p>
 <hr>
-<h1 id="2-方針">2.方針</h1><p>Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.<br>Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.<br>なので,Yocto linux向けのXenomaiパッチを作成してYoctoのビルドコンフィグに設定してビルドするです.</p>
+<h1 id="2-方針"><a href="#2-方針" class="headerlink" title="2.方針"></a>2.方針</h1><p>Ubilinuxのカーネルソースは公開されていないので,Edison向けYocto linuxのソースを落としてきてXenomaiパッチをあててビルドします.<br>Yoctoのビルドシステムを使用することになるので,手動でパッチあてて即ビルドというわけにはいかないです.<br>なので,Yocto linux向けのXenomaiパッチを作成してYoctoのビルドコンフィグに設定してビルドするです.</p>
 <hr>
-<h1 id="3-準備">3.準備</h1><p>まずEdisonにUbilinuxの環境を作成します.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; wget http://www.emutexlabs.com/files/ubilinux/ubilinux-edison-<span class="number">150309</span>.tar.gz</span><br><span class="line">&gt; tar zxvf ubilinux-edison-<span class="number">150309</span>.tar.gz$</span><br><span class="line">&gt; <span class="built_in">cd</span> toFlash</span><br><span class="line"> ここで一旦Edisonに接続されているUSBケーブルを取り外します</span><br><span class="line">&gt; ./flashall.sh</span><br><span class="line"> EdisonにUSBケーブルを接続します.</span><br></pre></td></tr></table></figure>
+<h1 id="3-準備"><a href="#3-準備" class="headerlink" title="3.準備"></a>3.準備</h1><p>まずEdisonにUbilinuxの環境を作成します.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; wget http://www.emutexlabs.com/files/ubilinux/ubilinux-edison-150309.tar.gz</span><br><span class="line">&gt; tar zxvf ubilinux-edison-150309.tar.gz$</span><br><span class="line">&gt; <span class="built_in">cd</span> toFlash</span><br><span class="line"> ここで一旦Edisonに接続されているUSBケーブルを取り外します</span><br><span class="line">&gt; ./flashall.sh</span><br><span class="line"> EdisonにUSBケーブルを接続します.</span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="4-作業手順">4.作業手順</h1><hr>
-<h2 id="4-1_作業ディレクトリ作成">4.1 作業ディレクトリ作成</h2><p>適当に作業用ディレクトリを作成します.<br>以降はこの下で作業を行います.</p>
+<h1 id="4-作業手順"><a href="#4-作業手順" class="headerlink" title="4.作業手順"></a>4.作業手順</h1><hr>
+<h2 id="4-1-作業ディレクトリ作成"><a href="#4-1-作業ディレクトリ作成" class="headerlink" title="4.1 作業ディレクトリ作成"></a>4.1 作業ディレクトリ作成</h2><p>適当に作業用ディレクトリを作成します.<br>以降はこの下で作業を行います.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir work</span><br><span class="line">&gt; <span class="built_in">cd</span> work</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="4-2_ソースコードの準備">4.2 ソースコードの準備</h2><p>Yocto LinuxとXenomaiのソース一式を取得して展開</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; wget http://downloadmirror.intel.com/<span class="number">25028</span>/eng/edison-src-ww25.<span class="number">5</span>-<span class="number">15</span>.tgz</span><br><span class="line">&gt; tar zxvf edison-src-ww25.<span class="number">5</span>-<span class="number">15</span>.tgz$</span><br><span class="line">&gt; wget https://xenomai.org/downloads/xenomai/stable/xenomai-<span class="number">3.0</span>.tar.bz2</span><br><span class="line">&gt; bzip2 -dc xenomai-<span class="number">3.0</span>.tar.bz2$ | tar xvf -</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-ソースコードの準備"><a href="#4-2-ソースコードの準備" class="headerlink" title="4.2 ソースコードの準備"></a>4.2 ソースコードの準備</h2><p>Yocto LinuxとXenomaiのソース一式を取得して展開</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; wget http://downloadmirror.intel.com/25028/eng/edison-src-ww25.5-15.tgz</span><br><span class="line">&gt; tar zxvf edison-src-ww25.5-15.tgz$</span><br><span class="line">&gt; wget https://xenomai.org/downloads/xenomai/stable/xenomai-3.0.tar.bz2</span><br><span class="line">&gt; bzip2 -dc xenomai-3.0.tar.bz2$ | tar xvf -</span><br></pre></td></tr></table></figure>
 <p>Git から取得しても良いです.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; git <span class="built_in">clone</span> git://git.yoctoproject.org/meta-intel-edison</span><br><span class="line">&gt; <span class="built_in">cd</span> meta-intel-edison</span><br><span class="line">&gt; git checkout ww05-<span class="number">15</span></span><br><span class="line">&gt; <span class="built_in">cd</span> ..</span><br><span class="line">&gt; mkdir edison-src</span><br><span class="line">&gt; mv meta-intel-edison edison-src/</span><br><span class="line"></span><br><span class="line">&gt; git <span class="built_in">clone</span> git://git.xenomai.org/xenomai-<span class="number">3</span>.git</span><br><span class="line">&gt; <span class="built_in">cd</span> xenomai-<span class="number">3</span></span><br><span class="line">&gt; git checkout v3.<span class="number">0</span></span><br><span class="line">&gt; <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; git <span class="built_in">clone</span> git://git.yoctoproject.org/meta-intel-edison</span><br><span class="line">&gt; <span class="built_in">cd</span> meta-intel-edison</span><br><span class="line">&gt; git checkout ww05-15</span><br><span class="line">&gt; <span class="built_in">cd</span> ..</span><br><span class="line">&gt; mkdir edison-src</span><br><span class="line">&gt; mv meta-intel-edison edison-src/</span><br><span class="line"></span><br><span class="line">&gt; git <span class="built_in">clone</span> git://git.xenomai.org/xenomai-3.git</span><br><span class="line">&gt; <span class="built_in">cd</span> xenomai-3</span><br><span class="line">&gt; git checkout v3.0</span><br><span class="line">&gt; <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="4-3_一旦ビルドする">4.3 一旦ビルドする</h2><p>Yoctoのビルドシステムではビルドコマンドしないとソースコードを落としてくれないのでビルドします.<br><em>と書いたもののバージョンが一致するカーネルをkernel.orgから持ってきても良さそうです.
+<h2 id="4-3-一旦ビルドする"><a href="#4-3-一旦ビルドする" class="headerlink" title="4.3 一旦ビルドする"></a>4.3 一旦ビルドする</h2><p>Yoctoのビルドシステムではビルドコマンドしないとソースコードを落としてくれないのでビルドします.<br><em>と書いたもののバージョンが一致するカーネルをkernel.orgから持ってきても良さそうです.
 </em>ビルドすると34GBほど消費されます.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> edison-src</span><br><span class="line">&gt; ln <span class="operator">-s</span> meta-intel-edison/utils/Makefile.mk Makefile</span><br><span class="line">&gt; make setup</span><br><span class="line">&gt; <span class="built_in">cd</span> edison-src/out/linux64</span><br><span class="line">&gt; <span class="built_in">source</span> poky/oe-init-build-env</span><br><span class="line">&gt; bitbake edison-image</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> edison-src</span><br><span class="line">&gt; ln -s meta-intel-edison/utils/Makefile.mk Makefile</span><br><span class="line">&gt; make setup</span><br><span class="line">&gt; <span class="built_in">cd</span> edison-src/out/linux64</span><br><span class="line">&gt; <span class="built_in">source</span> poky/oe-init-build-env</span><br><span class="line">&gt; bitbake edison-image</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="4-4_パッチ作成">4.4 パッチ作成</h2><p>ビルド終わると以下のディレクトリにカーネルソースが取得されています.<br>out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/linux/<br>ので、xenomaiパッチをあてます.<br>*edison用のディストリは皆32bitなので注意.</p>
+<h2 id="4-4-パッチ作成"><a href="#4-4-パッチ作成" class="headerlink" title="4.4 パッチ作成"></a>4.4 パッチ作成</h2><p>ビルド終わると以下のディレクトリにカーネルソースが取得されています.<br>out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/linux/<br>ので、xenomaiパッチをあてます.<br>*edison用のディストリは皆32bitなので注意.</p>
 <p>diff -Narup linux linux_xeno</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cp -rf edison-src/out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/<span class="number">3.10</span>.<span class="number">17</span>-r0/linux/ ./linux.org</span><br><span class="line">&gt; cp -rf edison-src/out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/<span class="number">3.10</span>.<span class="number">17</span>-r0/linux/ ./linux.xeno</span><br><span class="line">&gt; xenomai-<span class="number">3</span>/scripts/prepare-kernel.sh \</span><br><span class="line">--linux=linux.xeno \</span><br><span class="line">--ipipe=xenomai-<span class="number">3</span>/kernel/cobalt/arch/x86/patches/ipipe-core-<span class="number">3.10</span>.<span class="number">32</span>-x86-<span class="number">6</span>.patch \</span><br><span class="line">--arch=x86</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cp -rf edison-src/out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/linux/ ./linux.org</span><br><span class="line">&gt; cp -rf edison-src/out/linux64/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/linux/ ./linux.xeno</span><br><span class="line">&gt; xenomai-3/scripts/prepare-kernel.sh \</span><br><span class="line">--linux=linux.xeno \</span><br><span class="line">--ipipe=xenomai-3/kernel/cobalt/arch/x86/patches/ipipe-core-3.10.32-x86-6.patch \</span><br><span class="line">--arch=x86</span><br></pre></td></tr></table></figure>
 <p>これだとエラーが出るのでなくなるまで修正します.<br>修正が終わったらパッチを作成します.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; diff -Narup linux.org linux_xeno &gt; xenomai-<span class="number">3.0</span>-<span class="number">3.10</span>.<span class="number">17</span>.patch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; diff -Narup linux.org linux_xeno &gt; xenomai-3.0-3.10.17.patch</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="4-5_パッチの組み込み">4.5 パッチの組み込み</h2><p>作成したパッチをYoctoのビルドに組み込みます.<br>これには特定の場所にパッチを配置して、bitbakeの設定ファイルに記述を追加する必要があります.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; mv xenomai-<span class="number">3.0</span>-<span class="number">3.10</span>.<span class="number">17</span>.patch edison-src/meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/</span><br><span class="line">&gt; vi edison-src/meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/linux-yocto_3.<span class="number">10</span>.bbappend</span><br><span class="line">... 略 ...</span><br><span class="line">SRC_URI += <span class="string">"file://defconfig"</span></span><br><span class="line">SRC_URI += <span class="string">"file://upstream_to_edison.patch"</span>                 &lt;&lt;&lt;&lt; edison向けのパッチ</span><br><span class="line">SRC_URI += <span class="string">"file://xenomai-3.0-3.10.17.patch"</span>                &lt;&lt;&lt;&lt; 追加.xenomaiパッチ</span><br><span class="line">... 略 ...</span><br></pre></td></tr></table></figure>
+<h2 id="4-5-パッチの組み込み"><a href="#4-5-パッチの組み込み" class="headerlink" title="4.5 パッチの組み込み"></a>4.5 パッチの組み込み</h2><p>作成したパッチをYoctoのビルドに組み込みます.<br>これには特定の場所にパッチを配置して、bitbakeの設定ファイルに記述を追加する必要があります.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; mv xenomai-3.0-3.10.17.patch edison-src/meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/</span><br><span class="line">&gt; vi edison-src/meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/linux-yocto_3.10.bbappend</span><br><span class="line">... 略 ...</span><br><span class="line">SRC_URI += <span class="string">"file://defconfig"</span></span><br><span class="line">SRC_URI += <span class="string">"file://upstream_to_edison.patch"</span>                 &lt;&lt;&lt;&lt; edison向けのパッチ</span><br><span class="line">SRC_URI += <span class="string">"file://xenomai-3.0-3.10.17.patch"</span>                &lt;&lt;&lt;&lt; 追加.xenomaiパッチ</span><br><span class="line">... 略 ...</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="4-6_カーネルコンフィグ">4.6 カーネルコンフィグ</h2><p>Yoctoのビルドシステムを使ってカーネルのコンフィグをいじります.<br>Xenomaiを使い物にするには,CPUをぶん回したりするので以下を参考に設定します。<br><a href="https://xenomai.org//2014/06/configuring-for-x86-based-dual-kernels/" target="_blank" rel="external">https://xenomai.org//2014/06/configuring-for-x86-based-dual-kernels/</a></p>
+<h2 id="4-6-カーネルコンフィグ"><a href="#4-6-カーネルコンフィグ" class="headerlink" title="4.6 カーネルコンフィグ"></a>4.6 カーネルコンフィグ</h2><p>Yoctoのビルドシステムを使ってカーネルのコンフィグをいじります.<br>Xenomaiを使い物にするには,CPUをぶん回したりするので以下を参考に設定します。<br><a href="https://xenomai.org//2014/06/configuring-for-x86-based-dual-kernels/" target="_blank" rel="noopener">https://xenomai.org//2014/06/configuring-for-x86-based-dual-kernels/</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; bitbake virtual/kernel -c menuconfig</span><br></pre></td></tr></table></figure>
 <p>設定が終わったらYoctoのビルドシステムが指定する所定の場所に配置します.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp edison-src/build/tmp/work/edison-poky-linux/linux-yocto/<span class="number">3.10</span>.<span class="number">17</span>-r0/linux-edison-standard-build/.config ../../../meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp edison-src/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/linux-edison-standard-build/.config ../../../meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="4-7_ビルド">4.7 ビルド</h2><p>Xenomaiパッチを当てたカーネルをビルドします.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; bitbake edison-image</span><br><span class="line">&gt; ls edison-src/out/linux64/build/tmp/deploy/images/edison</span><br><span class="line">...</span><br><span class="line">bzImage--<span class="number">3.10</span>.<span class="number">17</span>-r0-edison-YYYYMMDDHHMMSS.bin</span><br><span class="line">edison-image-edison-YYYYMMDDHHMMSS.hddimg</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="4-7-ビルド"><a href="#4-7-ビルド" class="headerlink" title="4.7 ビルド"></a>4.7 ビルド</h2><p>Xenomaiパッチを当てたカーネルをビルドします.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; bitbake edison-image</span><br><span class="line">&gt; ls edison-src/out/linux64/build/tmp/deploy/images/edison</span><br><span class="line">...</span><br><span class="line">bzImage--3.10.17-r0-edison-YYYYMMDDHHMMSS.bin</span><br><span class="line">edison-image-edison-YYYYMMDDHHMMSS.hddimg</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="4-8_インストール">4.8 インストール</h2><p>vmlinuz と必要あれば/lib/modulesなどをコピーします.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir ext4</span><br><span class="line">&gt; sudo mount -o loop edison-image-edison-YYYYMMDDHHMMSS.rootfs.ext4 ext4</span><br><span class="line">&gt; ls ext4</span><br><span class="line">bin  boot  dev  etc  home  lib  lost+found  media  mnt  opt  proc  run  sbin  sketch  sys  tmp  usr  var</span><br><span class="line">&gt; scp -rf ext4/lib/modules/<span class="number">3.10</span>.<span class="number">17</span>-yocto-standard root@<span class="variable">$&#123;edison_ip&#125;</span>:/lib/modules/</span><br><span class="line"></span><br><span class="line">&gt; mkdir hddimg</span><br><span class="line">&gt; sudo mount -o loop edison-image-edison-YYYYMMDDHHMMSS.hddimg hddimg</span><br><span class="line">ldlinux.c32  ldlinux.sys  syslinux.cfg  vmlinuz</span><br><span class="line">&gt; scp -rf hddimg/vmlinuz root@<span class="variable">$&#123;edison_ip&#125;</span>:/boot/vmlinuz.xeno</span><br></pre></td></tr></table></figure>
+<h2 id="4-8-インストール"><a href="#4-8-インストール" class="headerlink" title="4.8 インストール"></a>4.8 インストール</h2><p>vmlinuz と必要あれば/lib/modulesなどをコピーします.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir ext4</span><br><span class="line">&gt; sudo mount -o loop edison-image-edison-YYYYMMDDHHMMSS.rootfs.ext4 ext4</span><br><span class="line">&gt; ls ext4</span><br><span class="line">bin  boot  dev  etc  home  lib  lost+found  media  mnt  opt  proc  run  sbin  sketch  sys  tmp  usr  var</span><br><span class="line">&gt; scp -rf ext4/lib/modules/3.10.17-yocto-standard root@<span class="variable">$&#123;edison_ip&#125;</span>:/lib/modules/</span><br><span class="line"></span><br><span class="line">&gt; mkdir hddimg</span><br><span class="line">&gt; sudo mount -o loop edison-image-edison-YYYYMMDDHHMMSS.hddimg hddimg</span><br><span class="line">ldlinux.c32  ldlinux.sys  syslinux.cfg  vmlinuz</span><br><span class="line">&gt; scp -rf hddimg/vmlinuz root@<span class="variable">$&#123;edison_ip&#125;</span>:/boot/vmlinuz.xeno</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://takarakasai.github.io/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/" data-id="cijsz5bg80001u0eru4ghhji9" class="article-share-link">Share</a>
+      <a data-url="http://takarakasai.github.io/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/" data-id="cjj29jm9b0005nrev0fr4g8mb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +169,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -184,6 +179,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/05/01/gijutsu_shoten_2017/">技術書典</a>
+          </li>
         
           <li>
             <a href="/2016/01/25/c89/">c89</a>
@@ -201,10 +200,6 @@
             <a href="/2015/11/30/rs485-with-Intel-Edison/">rs485-with-Intel-Edison</a>
           </li>
         
-          <li>
-            <a href="/2015/11/01/xenomai-3-0-on-ubilinux-with-Intel-Edison/">xenomai-3.0 on ubilinux with Intel Edison</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -217,7 +212,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 \@takarakasai<br>
+      &copy; 2018 \@takarakasai<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -235,11 +230,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>
